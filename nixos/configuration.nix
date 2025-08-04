@@ -93,6 +93,7 @@
     vim
     git
     wget
+    home-manager
   ];
 
   environment.variables.EDITOR = "vim";
