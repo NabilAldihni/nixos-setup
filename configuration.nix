@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ inputs, config, pkgs, ... }:
 
 {
   imports =
@@ -93,7 +93,7 @@
     vim
     git
     wget
-    home-manager
+  #  home-manager
   ];
 
   environment.variables.EDITOR = "vim";
