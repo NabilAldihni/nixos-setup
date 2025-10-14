@@ -92,7 +92,6 @@
     vim
     git
     wget
-    xrdp
   #  home-manager
   ];
 
@@ -106,13 +105,5 @@
   };
 
   system.stateVersion = "25.05";
-
-
-  # Enable RDP access (for remote desktop)
-  services.xrdp = {
-    enable = true;
-    openFirewall = true;
-    defaultWindowManager = "gnome-session";
-  }
 
 }
