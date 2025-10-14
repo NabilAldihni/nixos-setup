@@ -56,7 +56,7 @@
     description = "Nabil";
     extraGroups = [ "networkmanager" "wheel" ];
     openssh.authorizedKeys.keys = [
-      "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCiAp36nKSnIwCmy/kiDe4qDEVBLRNy7eKXm6luc2NVbsqsuzk1Z5evfiIEXVN7qtPiyLVFqBtFcAC64u7Du0Ps2gVFBF/U8gP+JXISbcJlVvGUCC0eEuWo4ovElDX7ibEzdSYrT7jQRh4MsZOK6Bo6qwB+l/ry4juwTxF7nbkMn2irUhjpZ6JOTIaAQbsHopz3AsCnddJXpPEq9GxPRUIFXqrhxvXsv47mQdV187KqXCG6oH/2iFAFNFhiiws+bLJNnc66qgSngqLbO9lHD5r6SqJ78YpaEG2d6XlUXVXEJxqYTbGmWbvqN5q7LsOfQRiob+AUTPjLNA83dLg+jZacnXuJxbBKJa/DbjRhVYx0/lwV1iM7fj+CdT3xSaBvIB4JVlQonnsA2r/8g0+ttxHH3ZACEQEPIzQflebOGPHSj75dRLVWyioUnKzTk9HGiyndcAjf12cZm/2PhQpGPclw1ijq2OFm05J6E682mAfzhK2qhYKXYG6/oWK50P/k+0c= github"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICBa6twmSw6a8kvu41c/k56G9ytgC9VJVPDhyizzbTSD nabil@computer"
     ];
     packages = with pkgs; [
 
