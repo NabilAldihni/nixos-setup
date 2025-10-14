@@ -97,7 +97,7 @@
     mesa
     wayland
     hyprpaper hyprlock waybar # good wayland tools
-  #  home-manager
+    home-manager
   ];
 
   environment.variables.EDITOR = "vim";
@@ -116,5 +116,9 @@
   };
 
   system.stateVersion = "25.05";
+
+  fonts.packages = with pkgs; [
+    font-awesome
+  ];
 
 }
