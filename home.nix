@@ -4,8 +4,9 @@
   imports = [
     ./modules/sh.nix
     ./modules/dis.nix
-    ./modules/hyprland.nix
-    ./modules/waybar.nix
+    ./modules/hypr/hyprland.nix
+    ./modules/hypr/hyprpaper.nix
+    ./modules/hypr/waybar.nix
   ];
   home.username = "nabil";
   home.homeDirectory = "/home/nabil";
