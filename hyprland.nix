@@ -5,8 +5,7 @@
     extraConfig = ''
       monitor=,preferred,auto,1
       exec-once = waybar &
-      exec-once = hyprland &
-      exec-once = firefox &
+      exec-once = hyprpaper &
     '';
   };
 }
