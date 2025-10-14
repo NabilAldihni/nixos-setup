@@ -23,18 +23,34 @@
   # Select internationalisation properties.
   i18n.defaultLocale = "en_CA.UTF-8";
 
+
+  # Display manager
+  services.displayManager.sddm.enable = true;
+  services.displayManager.sddm.wayland.enable = true;
+
+  # Enable Wayland + Hyprland
+  programs.hyprland.enable = true;
+
+  services.seatd.enable = true;
+  xdg.portal.enable = true;
+  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+
+
+
   # Enable the X11 windowing system.
-  services.xserver.enable = true;
+  # services.xserver.enable = true;
 
   # Enable the GNOME Desktop Environment.
-  services.displayManager.gdm.enable = true;
-  services.desktopManager.gnome.enable = true;
+  # services.displayManager.gdm.enable = true;
+  # services.desktopManager.gnome.enable = true;
 
   # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
-  };
+  # services.xserver.xkb = {
+    # layout = "us";
+    # variant = "";
+  # };
+
+
 
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
@@ -92,10 +108,19 @@
     vim
     git
     wget
+    mesa
+    wayland
+    hyprpaper hyprlock waybar # good wayland tools
   #  home-manager
   ];
 
   environment.variables.EDITOR = "vim";
+  environment.sessionVariables = {
+    WLR_NO_HARDWARE_CURSORS = "1"; # Sometimes needed in VMs
+    XDG_SESSION_TYPE = "wayland";
+    MOZ_ENABLE_WAYLAND = "1";       # Firefox Wayland
+    NIXOS_OZONE_WL = "1";           # Electron/Chromium Wayland
+  };
 
   # Enable the OpenSSH daemon.
   services.openssh = {
