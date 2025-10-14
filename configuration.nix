@@ -96,6 +96,8 @@
     wget
     alacritty
     mesa
+    jq
+    file
     wayland
     hyprpaper hyprlock waybar # good wayland tools
     home-manager
