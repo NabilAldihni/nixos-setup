@@ -8,6 +8,10 @@
       rb = "sudo nixos-rebuild switch --flake ~/config";
       hrb = "home-manager switch --flake ~/config";
     };
-    bashrcExtra = "bind 'set completion-ignore-case on'";
+    bashrcExtra = ''
+      if [[ $- == *i* ]]; then
+        bind 'set completion-ignore-case on'
+      fi
+  '';
   };
 }
