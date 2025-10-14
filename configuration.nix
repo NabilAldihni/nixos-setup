@@ -71,24 +71,20 @@
     }
   ];
 
-  # Install firefox.
   programs.firefox.enable = true;
 
   programs.git = {
     enable = true;
     config = {
       user = {
- 	name = "Nabil Aldihni Garcia";
-  	email = "aldihninabil@gmail.com";
+        name = "Nabil Aldihni Garcia";
+        email = "aldihninabil@gmail.com";
       };
     };
   };
 
-  # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
   environment.systemPackages = with pkgs; [
     vim
     bash
@@ -97,9 +93,11 @@
     alacritty
     mesa
     jq
+    fd
+    ripgrep
     file
     wayland
-    hyprpaper hyprlock waybar # good wayland tools
+    hyprpaper hyprlock waybar
     home-manager
   ];
 
@@ -123,7 +121,6 @@
   fonts.packages = with pkgs; [
     font-awesome
   ];
-
 
   services.tailscale.enable = true;
 
