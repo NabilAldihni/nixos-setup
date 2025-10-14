@@ -2,9 +2,9 @@
 
 {
   imports = [
-    ./sh.nix
-    ./dis.nix
-    ./hyprland.nix
+    ./modules/sh.nix
+    ./modules/dis.nix
+    ./modules/hyprland.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
