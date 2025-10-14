@@ -1,10 +1,9 @@
-{ inputs, config, pkgs, ... }:
+{ inputs, config, lib, pkgs, ... }:
 
 {
-  imports =
-    [ 
-      ./hardware-configuration.nix
-    ];
+  imports = [ 
+    ./hardware-configuration.nix
+  ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
@@ -93,6 +92,7 @@
     vim
     git
     wget
+    xrdp
   #  home-manager
   ];
 
@@ -106,5 +106,13 @@
   };
 
   system.stateVersion = "25.05";
+
+
+  # Enable RDP access (for remote desktop)
+  services.xrdp = {
+    enable = true;
+    openFirewall = true;
+    defaultWindowManager = "gnome-session";
+  }
 
 }
