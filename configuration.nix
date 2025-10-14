@@ -91,6 +91,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     vim
+    bash
     git
     wget
     alacritty
