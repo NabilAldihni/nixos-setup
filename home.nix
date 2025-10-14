@@ -5,6 +5,7 @@
     ./modules/sh.nix
     ./modules/dis.nix
     ./modules/hyprland.nix
+    ./modules/waybar.nix
   ];
   home.username = "nabil";
   home.homeDirectory = "/home/nabil";
@@ -28,5 +29,4 @@
   };
 
   programs.home-manager.enable = true;
-
 }
