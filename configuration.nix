@@ -93,6 +93,7 @@
     vim
     git
     wget
+    alacritty
     mesa
     wayland
     hyprpaper hyprlock waybar # good wayland tools
