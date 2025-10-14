@@ -122,4 +122,7 @@
     font-awesome
   ];
 
+
+  services.tailscale.enable = true;
+
 }
