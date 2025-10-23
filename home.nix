@@ -30,4 +30,6 @@
     enableBashIntegration = true;
     nix-direnv.enable = true;
   };
+
+  programs.tmux.enable = true;
 }

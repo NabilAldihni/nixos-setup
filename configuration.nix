@@ -23,6 +23,7 @@
   # Select internationalisation properties.
   i18n.defaultLocale = "en_CA.UTF-8";
 
+  system.stateVersion = "25.05";
 
   # Display manager
   services.displayManager.sddm.enable = true;
@@ -50,11 +51,15 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
+  virtualisation.docker = {
+    enable = true;
+  };
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.nabil = {
     isNormalUser = true;
     description = "Nabil";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICBa6twmSw6a8kvu41c/k56G9ytgC9VJVPDhyizzbTSD nabil@computer"
     ];
@@ -96,6 +101,8 @@
     fd
     ripgrep
     file
+    tree
+    unzip
     wayland
     hyprpaper hyprlock waybar
     home-manager
@@ -116,12 +123,12 @@
     settings.PermitRootLogin = "no";
   };
 
-  system.stateVersion = "25.05";
 
   fonts.packages = with pkgs; [
     font-awesome
   ];
 
   services.tailscale.enable = true;
+
 
 }
