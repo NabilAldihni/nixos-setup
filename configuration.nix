@@ -7,6 +7,16 @@
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
+  # Optimise on every build
+  nix.settings.auto-optimise-store = true;
+
+  # Remove garbage automatically
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 30d";
+  };
+
   # Bootloader.
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "/dev/sda";
