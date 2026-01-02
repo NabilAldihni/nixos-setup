@@ -5,6 +5,7 @@
     shellAliases = {
       ll = "ls -l";
       la = "ls -la";
+      v = "nvim";
       rb = "sudo nixos-rebuild switch --flake ~/config";
       hrb = "home-manager switch --flake ~/config";
     };

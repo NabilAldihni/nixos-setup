@@ -7,6 +7,8 @@
     ./modules/hypr/hyprland.nix
     ./modules/hypr/hyprpaper.nix
     ./modules/hypr/waybar.nix
+    ./modules/hypr/rofi.nix
+    ./modules/tmux.nix
   ];
   home.stateVersion = "25.05"; # Do not change this value
   programs.home-manager.enable = true;
@@ -19,6 +21,7 @@
 
   home.sessionVariables = {
     EDITOR = "vim";
+    TERMINAL = "alacritty";
   };
 
   home.file = {
@@ -30,6 +33,4 @@
     enableBashIntegration = true;
     nix-direnv.enable = true;
   };
-
-  programs.tmux.enable = true;
 }

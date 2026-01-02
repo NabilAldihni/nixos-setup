@@ -51,7 +51,10 @@
   services.displayManager.sddm.wayland.enable = true;
 
   # Enable Wayland + Hyprland
-  programs.hyprland.enable = true;
+  programs.hyprland = {
+    enable = true;
+    withUWSM = true;
+  };
 
   services.seatd.enable = true;
   xdg.portal.enable = true;
@@ -150,6 +153,5 @@
   ];
 
   services.tailscale.enable = true;
-
 
 }
