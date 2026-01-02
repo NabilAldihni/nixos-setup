@@ -1,8 +1,8 @@
 { config, pkgs, ... }:
 {
-  programs.tmux.enable = true;
+  home.packages = [ pkgs.tmux ];
 
-  home.file.".tmux.conf".source =
+  home.file.".config/tmux".source =
     config.lib.file.mkOutOfStoreSymlink
-      "/home/nabil/dot-files/tmux/.tmux.conf";
+      "/home/nabil/dot-files/tmux";
 }
