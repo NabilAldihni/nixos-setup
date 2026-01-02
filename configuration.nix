@@ -18,9 +18,20 @@
   };
 
   # Bootloader.
-  boot.loader.grub.enable = true;
-  boot.loader.grub.device = "/dev/sda";
-  boot.loader.grub.useOSProber = false;
+  boot.loader = {
+    grub = {
+      enable = true;
+      efiSupport = true;
+      device = "nodev";
+      useOSProber = true;
+
+      configurationLimit = 5;
+    };
+
+    efi = {    
+      efiSysMountPoint = "/boot";
+    };
+  };
 
   networking.hostName = "nixos";
 
