@@ -16,7 +16,8 @@
   home.username = "nabil";
   home.homeDirectory = "/home/nabil";
 
-  home.packages = [
+  home.packages = with pkgs; [
+    vesktop
   ];
 
   home.sessionVariables = {
