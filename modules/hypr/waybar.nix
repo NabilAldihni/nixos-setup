@@ -26,7 +26,7 @@ in
         position = "top";
         modules-left = [ "workspaces" "window" ];
         modules-center = [ "clock" ];
-        modules-right = [ "tray" "battery" "custom/tailscale" "network" "cpu" ];
+        modules-right = [ "battery" "custom/tailscale" "pulseaudio" ];
 
         clock = {
           format = "{:%Y-%m-%d %H:%M}";

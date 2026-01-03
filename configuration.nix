@@ -127,6 +127,7 @@
     file
     tree
     unzip
+    brightnessctl
     wayland
     hyprpaper hyprlock waybar
     home-manager
