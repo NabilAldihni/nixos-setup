@@ -124,6 +124,7 @@
     jq
     fd
     ripgrep
+    dig
     file
     tree
     unzip
