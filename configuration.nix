@@ -125,6 +125,8 @@
     fd
     ripgrep
     dig
+    traceroute
+    whois
     file
     tree
     unzip
