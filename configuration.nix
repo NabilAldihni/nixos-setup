@@ -39,7 +39,7 @@
   networking.networkmanager.enable = true;
 
   # Set your time zone.
-  time.timeZone = "America/Toronto";
+  time.timeZone = "Europe/Madrid";
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_CA.UTF-8";

@@ -25,6 +25,10 @@
     TERMINAL = "alacritty";
   };
 
+  home.sessionPath = [
+    "$HOME/dot-files/scripts"
+  ];
+
   home.file = {
   };
 
