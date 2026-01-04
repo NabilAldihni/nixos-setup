@@ -145,6 +145,7 @@
 
   services.tailscale.enable = true;
   services.blueman.enable = true;
+  services.fprintd.enable = true;
 
   environment.systemPackages = with pkgs; [
     vim
@@ -170,7 +171,7 @@
     brightnessctl
     spotify
     wayland
-    hyprpaper hyprlock waybar
+    hyprpaper hyprlock hyprpolkitagent waybar
     home-manager
   ];
 
