@@ -40,6 +40,7 @@
 
   # Set your time zone.
   time.timeZone = "Europe/Madrid";
+  # time.timeZone = "America/Toronto";
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_CA.UTF-8";
@@ -130,6 +131,8 @@
     file
     tree
     unzip
+    yarn
+    nodejs
     brightnessctl
     wayland
     hyprpaper hyprlock waybar

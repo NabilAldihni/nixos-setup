@@ -9,6 +9,7 @@
     ./modules/hypr/waybar.nix
     ./modules/hypr/rofi.nix
     ./modules/tmux.nix
+    ./modules/nvim.nix
   ];
   home.stateVersion = "25.05"; # Do not change this value
   programs.home-manager.enable = true;
