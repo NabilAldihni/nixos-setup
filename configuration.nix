@@ -38,6 +38,13 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
+  hardware.bluetooth = {
+    enable = true;
+    settings.General = {
+        Experimental = true;
+    };
+  };
+
   # Set your time zone.
   time.timeZone = "Europe/Madrid";
   # time.timeZone = "America/Toronto";
@@ -120,12 +127,14 @@
     bash
     git
     wget
+    gcc
     alacritty
     mesa
     jq
     fd
     ripgrep
     dig
+    pywal
     traceroute
     whois
     file
@@ -134,6 +143,7 @@
     yarn
     nodejs
     brightnessctl
+    spotify
     wayland
     hyprpaper hyprlock waybar
     home-manager
@@ -156,9 +166,11 @@
 
 
   fonts.packages = with pkgs; [
-    font-awesome
+    nerd-fonts.jetbrains-mono
+    nerd-fonts.symbols-only
   ];
 
   services.tailscale.enable = true;
+  services.blueman.enable = true;
 
 }

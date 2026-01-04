@@ -19,10 +19,10 @@
 
   home.packages = with pkgs; [
     vesktop
+    hyprpicker
   ];
 
   home.sessionVariables = {
-    EDITOR = "vim";
     TERMINAL = "alacritty";
   };
 
@@ -38,5 +38,9 @@
     silent = true;
     enableBashIntegration = true;
     nix-direnv.enable = true;
+  };
+
+  services = {
+      swaync.enable = true;
   };
 }
