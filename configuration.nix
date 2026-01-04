@@ -122,33 +122,6 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  environment.systemPackages = with pkgs; [
-    vim
-    bash
-    git
-    wget
-    gcc
-    alacritty
-    mesa
-    jq
-    fd
-    ripgrep
-    dig
-    pywal
-    traceroute
-    whois
-    file
-    tree
-    unzip
-    yarn
-    nodejs
-    brightnessctl
-    spotify
-    wayland
-    hyprpaper hyprlock waybar
-    home-manager
-  ];
-
   environment.variables.EDITOR = "vim";
   environment.sessionVariables = {
     WLR_NO_HARDWARE_CURSORS = "1"; # Sometimes needed in VMs
@@ -172,5 +145,33 @@
 
   services.tailscale.enable = true;
   services.blueman.enable = true;
+
+  environment.systemPackages = with pkgs; [
+    vim
+    bash
+    git
+    wget
+    gcc
+    alacritty
+    mesa
+    jq
+    fd
+    feh
+    ripgrep
+    dig
+    pywal
+    traceroute
+    whois
+    file
+    tree
+    unzip
+    yarn
+    nodejs
+    brightnessctl
+    spotify
+    wayland
+    hyprpaper hyprlock waybar
+    home-manager
+  ];
 
 }
