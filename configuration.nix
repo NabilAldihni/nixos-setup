@@ -113,11 +113,31 @@
 
     security.sudo.enable = true;
     security.sudo.extraRules = [
-    {
-        users = ["nabil"];
-        commands = [{ command = "ALL"; options = ["NOPASSWD"]; }];
-    }
+        {
+            users = ["nabil"];
+            commands = [{ command = "ALL"; options = ["NOPASSWD"]; }];
+        }
     ];
+
+    security.pki.certificates = [ "-----BEGIN CERTIFICATE-----
+MIIDJTCCAg2gAwIBAgIUDDNTGos7LtEPyCz+LAA6J7Qk+eEwDQYJKoZIhvcNAQEL
+BQAwGjEYMBYGA1UEAxMPYmlsLmxhYiBSb290IENBMB4XDTI1MDExNTAzMjgyMVoX
+DTM1MDExMzAzMjg1MVowGjEYMBYGA1UEAxMPYmlsLmxhYiBSb290IENBMIIBIjAN
+BgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA1weirqwO3bophgXoUhT9rUPFOaR+
+YYdFUwGnCxpCYUx3SzxGP268bA2OQnKyk7b6Y2P6CscZD/gd8lmXcpWSPRZWNaZN
+Qv9/WETG3AOOUKI4Dhk5EoshG43bUXXM4iNIPnPsVWT/u5G3T0IzaW18aP8qUcPu
+1WpXYF78KnCBDBXexgjA+m/eYcV4oKzL0eRSnKm6sVIpzGYXYe5kdtNCAh6W8mJI
+z3rqpiGZMy2XMWqU0NSfTFsAhXnKUTjQAH7nz0QpkOMRoj8HbXNw6tLFLQSh/cdc
+CVTFWbQNuAmvnwizMm0fqCQyIzXpUdhodAiHJp9UOZ6gQC96fKKajMBl/wIDAQAB
+o2MwYTAOBgNVHQ8BAf8EBAMCAQYwDwYDVR0TAQH/BAUwAwEB/zAdBgNVHQ4EFgQU
+LTYp1ryMjAwT+yIv003izh58hv0wHwYDVR0jBBgwFoAULTYp1ryMjAwT+yIv003i
+zh58hv0wDQYJKoZIhvcNAQELBQADggEBADwIIvcp1dDisGaAjRQeCyNRDA8YvrAK
+12NgDTyB3kmll3YyBiQ5+FUMNnU65YiNIHxgvVN1KD+L6PFafoRVfV9Rp2UZ2LYm
+0sYJTyTafsWcF3H5p0WoWo/e8X5WMY/KP3mq4CAe0gLcBkl1JXtOva7iF9Dc/iC5
+ym/XNRTZDZNJS0JmLwjV/CwDyfkQ/XxVjf125Rxmdo3EmcVVekP60BRmsngzHKYH
+AJC0t0sN7ZoS4eeFgwj37ukrfcVP+zkMZnRtyJUw2K+JJrtJIqequ90Yz5dcqOQ3
+XC1gOVNVlwbBusLvURRFKs5S12ZvGjkGsfH4/izrl6+9ft87cUczbhY=
+-----END CERTIFICATE-----" ];
 
     programs.firefox.enable = true;
 
