@@ -175,6 +175,7 @@
     tree
     unzip
     yarn
+    usbutils
     nodejs
     brightnessctl
     spotify
