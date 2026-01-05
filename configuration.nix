@@ -147,6 +147,14 @@
   services.blueman.enable = true;
   services.fprintd.enable = true;
 
+  programs._1password.enable = true;
+  programs._1password-gui = {
+    enable = true;
+    # Certain features, including CLI integration and system authentication support,
+    # require enabling PolKit integration on some desktop environments (e.g. Plasma).
+    polkitPolicyOwners = [ "nabil" ];
+  };
+
   environment.systemPackages = with pkgs; [
     vim
     bash
@@ -170,8 +178,7 @@
     nodejs
     brightnessctl
     spotify
-    wayland
-    hyprpaper hyprlock hyprpolkitagent waybar
+    wayland hyprpaper hyprlock hyprpolkitagent hyprsunset waybar
     home-manager
   ];
 
