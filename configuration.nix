@@ -189,30 +189,31 @@ XC1gOVNVlwbBusLvURRFKs5S12ZvGjkGsfH4/izrl6+9ft87cUczbhY=
 
     environment.systemPackages = with pkgs; [
         vim
-            bash
-            git
-            wget
-            gcc
-            alacritty
-            mesa
-            jq
-            fd
-            feh
-            ripgrep
-            dig
-            pywal
-            traceroute
-            whois
-            file
-            tree
-            unzip
-            yarn
-            usbutils
-            nodejs
-            brightnessctl
-            spotify
-            wayland hyprpaper hyprlock hyprpolkitagent hyprsunset waybar
-            home-manager
-            ];
+        bash
+        git
+        wget
+        gcc
+        alacritty
+        mesa
+        jq
+        fd
+        feh
+        ripgrep
+        dig
+        pywal
+        traceroute
+        whois
+        file
+        tree
+        grim slurp wl-clipboard
+        unzip
+        yarn
+        usbutils
+        nodejs
+        brightnessctl
+        spotify
+        wayland hyprpaper hyprlock hyprpolkitagent hyprsunset waybar
+        home-manager
+    ];
 
 }
