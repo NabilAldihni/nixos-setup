@@ -1,46 +1,50 @@
 { config, pkgs, ... }:
 
 {
-  imports = [
-    ./modules/sh.nix
-    ./modules/dis.nix
-    ./modules/hypr/hyprland.nix
-    ./modules/hypr/hyprpaper.nix
-    ./modules/hypr/waybar.nix
-    ./modules/hypr/rofi.nix
-    ./modules/tmux.nix
-    ./modules/nvim.nix
-  ];
-  home.stateVersion = "25.05"; # Do not change this value
-  programs.home-manager.enable = true;
+    imports = [
+        ./modules/sh.nix
+            ./modules/dis.nix
+            ./modules/hypr/hyprland.nix
+            ./modules/hypr/hyprpaper.nix
+            ./modules/hypr/waybar.nix
+            ./modules/hypr/rofi.nix
+            ./modules/tmux.nix
+            ./modules/nvim.nix
+    ];
+    home.stateVersion = "25.05"; # Do not change this value
+        programs.home-manager.enable = true;
 
-  home.username = "nabil";
-  home.homeDirectory = "/home/nabil";
+    home.username = "nabil";
+    home.homeDirectory = "/home/nabil";
 
-  home.packages = with pkgs; [
-    vesktop
-    hyprpicker
-  ];
+    home.packages = with pkgs; [
+        vesktop
+        hyprpicker
+    ];
 
-  home.sessionVariables = {
-    TERMINAL = "alacritty";
-  };
+    home.sessionVariables = {
+        TERMINAL = "alacritty";
+    };
 
-  home.sessionPath = [
-    "$HOME/dot-files/scripts"
-  ];
+    home.sessionPath = [
+        "$HOME/dot-files/scripts"
+    ];
 
-  home.file = {
-  };
+    home.file = {
+    };
 
-  programs.direnv = {
-    enable = true;
-    silent = true;
-    enableBashIntegration = true;
-    nix-direnv.enable = true;
-  };
+    programs.direnv = {
+        enable = true;
+        silent = true;
+        enableBashIntegration = true;
+        nix-direnv.enable = true;
+    };
 
-  services = {
-      swaync.enable = true;
-  };
+    services = {
+        swaync.enable = true;
+    };
+
+    programs.ssh = {
+
+    };
 }
