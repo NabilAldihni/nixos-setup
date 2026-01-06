@@ -156,9 +156,9 @@ XC1gOVNVlwbBusLvURRFKs5S12ZvGjkGsfH4/izrl6+9ft87cUczbhY=
     environment.variables.EDITOR = "vim";
     environment.sessionVariables = {
         WLR_NO_HARDWARE_CURSORS = "1"; # Sometimes needed in VMs
-            XDG_SESSION_TYPE = "wayland";
+        XDG_SESSION_TYPE = "wayland";
         MOZ_ENABLE_WAYLAND = "1";       # Firefox Wayland
-            NIXOS_OZONE_WL = "1";           # Electron/Chromium Wayland
+        NIXOS_OZONE_WL = "1";           # Electron/Chromium Wayland
     };
 
 # Enable the OpenSSH daemon.
@@ -171,7 +171,7 @@ XC1gOVNVlwbBusLvURRFKs5S12ZvGjkGsfH4/izrl6+9ft87cUczbhY=
 
     fonts.packages = with pkgs; [
         nerd-fonts.jetbrains-mono
-            nerd-fonts.symbols-only
+        nerd-fonts.symbols-only
     ];
 
     services.tailscale.enable = true;
@@ -185,6 +185,17 @@ XC1gOVNVlwbBusLvURRFKs5S12ZvGjkGsfH4/izrl6+9ft87cUczbhY=
 # Certain features, including CLI integration and system authentication support,
 # require enabling PolKit integration on some desktop environments (e.g. Plasma).
         polkitPolicyOwners = [ "nabil" ];
+    };
+
+    systemd.services.configure-sound-leds = {
+        # wantedBy = [ "sys-devices-pci0000:00-0000:00:1f.3-sof_sdw-sound-card0-controlC0.device" ];
+        wantedBy = [ "sound.target" ];
+        after = [ "sound.target" ];
+        serviceConfig.Type = "oneshot";
+        script = ''
+            echo follow-route > /sys/class/sound/ctl-led/mic/mode
+            echo off > /sys/class/sound/ctl-led/speaker/mode # follow-route pending https://discourse.nixos.org/t/20480
+            '';
     };
 
     environment.systemPackages = with pkgs; [
