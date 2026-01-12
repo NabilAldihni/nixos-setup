@@ -219,6 +219,7 @@ XC1gOVNVlwbBusLvURRFKs5S12ZvGjkGsfH4/izrl6+9ft87cUczbhY=
         tree
         grim slurp wl-clipboard
         unzip
+        python3
         yarn
         usbutils
         nodejs

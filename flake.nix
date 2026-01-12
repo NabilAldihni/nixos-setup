@@ -7,9 +7,10 @@
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
   };
 
-  outputs = { nixpkgs, home-manager, ... } @ inputs: 
+  outputs = { nixpkgs, home-manager, nixos-hardware, ... } @ inputs: 
   let
     system = "x86_64-linux";
     lib = nixpkgs.lib;
@@ -28,6 +29,8 @@
 
           home-manager.users.nabil = import ./home.nix;
         }
+
+        nixos-hardware.nixosModules.dell-xps-13-9315
       ];
     };
 
