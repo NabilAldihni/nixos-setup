@@ -57,8 +57,7 @@
     };
 
 # Set your time zone.
-    time.timeZone = "Europe/Madrid";
-# time.timeZone = "America/Toronto";
+    time.timeZone = "America/Toronto";
 
 # Select internationalisation properties.
     i18n.defaultLocale = "en_CA.UTF-8";
@@ -224,7 +223,7 @@ XC1gOVNVlwbBusLvURRFKs5S12ZvGjkGsfH4/izrl6+9ft87cUczbhY=
         usbutils
         nodejs
         brightnessctl
-        spotify
+        spotify slack
         wayland hyprpaper hyprlock hyprpolkitagent hyprsunset waybar
         home-manager
     ];
