@@ -8,6 +8,9 @@
       v = "nvim";
       rb = "sudo nixos-rebuild switch --flake ~/config";
       hrb = "home-manager switch --flake ~/config";
+
+      # To run pintos docker command
+      pintos-up = "docker run --platform linux/amd64 --rm --name pintos -it -v /home/nabil/uni/CSCC69-Pintos/:/pintos thierrysans/pintos";
     };
     bashrcExtra = ''
       if [[ $- == *i* ]]; then

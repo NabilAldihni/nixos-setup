@@ -42,6 +42,7 @@
 
     services = {
         swaync.enable = true;
+        mpris-proxy.enable = true;
     };
 
     programs.ssh = {
@@ -115,6 +116,13 @@
                 host = "proxmox";
                 hostname = "100.118.68.78";
                 user = "root";
+                identityFile = "~/.ssh/id_lab";
+            };
+
+            kali = {
+                host = "kali";
+                hostname = "192.168.40.56";
+                user = "kali";
                 identityFile = "~/.ssh/id_lab";
             };
 
