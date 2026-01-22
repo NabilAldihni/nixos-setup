@@ -186,6 +186,12 @@ XC1gOVNVlwbBusLvURRFKs5S12ZvGjkGsfH4/izrl6+9ft87cUczbhY=
         polkitPolicyOwners = [ "nabil" ];
     };
 
+    services.pcscd.enable = true;
+    programs.gnupg.agent = {
+        enable = true;
+        pinentryPackage = pkgs.pinentry-gtk2;
+    };
+
     systemd.services.configure-sound-leds = {
         # wantedBy = [ "sys-devices-pci0000:00-0000:00:1f.3-sof_sdw-sound-card0-controlC0.device" ];
         wantedBy = [ "sound.target" ];
@@ -207,12 +213,15 @@ XC1gOVNVlwbBusLvURRFKs5S12ZvGjkGsfH4/izrl6+9ft87cUczbhY=
         kdePackages.dolphin
         mesa
         jq
+        openvpn
         fd
         feh
         ripgrep
         dig
         pywal
         traceroute
+        gnupg
+        pinentry-gtk2
         whois
         file
         tree
@@ -226,6 +235,7 @@ XC1gOVNVlwbBusLvURRFKs5S12ZvGjkGsfH4/izrl6+9ft87cUczbhY=
         spotify slack
         wayland hyprpaper hyprlock hyprpolkitagent hyprsunset waybar
         home-manager
+        windsurf
     ];
 
 }

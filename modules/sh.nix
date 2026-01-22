@@ -10,7 +10,10 @@
       hrb = "home-manager switch --flake ~/config";
 
       # To run pintos docker command
-      pintos-up = "docker run --platform linux/amd64 --rm --name pintos -it -v /home/nabil/uni/CSCC69-Pintos/:/pintos thierrysans/pintos";
+      pintos-up = "docker run --platform linux/amd64 --rm --name pintos -w /pintos/src -it -v /home/nabil/uni/C69/:/pintos thierrysans/pintos";
+
+      # To use dotcoin
+      dotcoin = "npm run cli --";
     };
     bashrcExtra = ''
       if [[ $- == *i* ]]; then
