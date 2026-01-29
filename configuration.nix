@@ -147,6 +147,7 @@ XC1gOVNVlwbBusLvURRFKs5S12ZvGjkGsfH4/izrl6+9ft87cUczbhY=
                 name = "Nabil Aldihni Garcia";
                 email = "aldihninabil@gmail.com";
             };
+            init.defaultBranch = "main";
         };
     };
 

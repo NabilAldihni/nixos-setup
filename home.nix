@@ -5,6 +5,7 @@
         ./modules/sh.nix
             ./modules/dis.nix
             ./modules/hypr/hyprland.nix
+            ./modules/hypr/hypridle.nix
             ./modules/hypr/hyprpaper.nix
             ./modules/hypr/waybar.nix
             ./modules/hypr/rofi.nix
