@@ -187,6 +187,10 @@ XC1gOVNVlwbBusLvURRFKs5S12ZvGjkGsfH4/izrl6+9ft87cUczbhY=
         polkitPolicyOwners = [ "nabil" ];
     };
 
+    programs.steam = {
+      enable = true;
+    };
+
     services.pcscd.enable = true;
     programs.gnupg.agent = {
         enable = true;
