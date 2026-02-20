@@ -127,6 +127,13 @@
         identityFile = "~/.ssh/id_lab";
       };
 
+      d21 = {
+        host = "d21";
+        hostname = "limit-order-exchange-exchange101.amazingcloud.space";
+        user = "root";
+        identityFile = "~/.ssh/id_ed25519";
+      };
+
       "*" = {
         forwardAgent = false;
         addKeysToAgent = "no";

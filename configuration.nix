@@ -237,7 +237,8 @@ XC1gOVNVlwbBusLvURRFKs5S12ZvGjkGsfH4/izrl6+9ft87cUczbhY=
         usbutils
         nodejs
         brightnessctl
-        spotify slack
+        remmina
+        spotify slack telegram-desktop
         wayland hyprpaper hyprlock hyprpolkitagent hyprsunset waybar
         home-manager
         windsurf
