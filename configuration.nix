@@ -213,7 +213,7 @@ XC1gOVNVlwbBusLvURRFKs5S12ZvGjkGsfH4/izrl6+9ft87cUczbhY=
         bash
         git
         wget
-        gcc
+        gcc clang-tools
         alacritty
         kdePackages.dolphin
         mesa
