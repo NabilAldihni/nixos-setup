@@ -24,6 +24,7 @@
       efiSupport = true;
       device = "nodev";
       useOSProber = true;
+      extraConfig = "";
 
       configurationLimit = 5;
     };
@@ -156,9 +157,9 @@
   environment.variables.EDITOR = "vim";
   environment.sessionVariables = {
     WLR_NO_HARDWARE_CURSORS = "1"; # Sometimes needed in VMs
-      XDG_SESSION_TYPE = "wayland";
+    XDG_SESSION_TYPE = "wayland";
     MOZ_ENABLE_WAYLAND = "1";       # Firefox Wayland
-      NIXOS_OZONE_WL = "1";           # Electron/Chromium Wayland
+    NIXOS_OZONE_WL = "1";           # Electron/Chromium Wayland
   };
 
 # Enable the OpenSSH daemon.
@@ -171,7 +172,7 @@
 
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
-      nerd-fonts.symbols-only
+    nerd-fonts.symbols-only
   ];
 
   services.tailscale.enable = true;
@@ -210,38 +211,38 @@
 
   environment.systemPackages = with pkgs; [
     vim
-      bash
-      git
-      wget
-      gcc clang-tools
-      alacritty
-      kdePackages.dolphin
-      mesa
-      jq
-      openvpn
-      fd
-      feh
-      ripgrep
-      dig
-      pywal
-      traceroute
-      gnupg
-      pinentry-gtk2
-      whois
-      file
-      tree
-      grim slurp wl-clipboard
-      unzip
-      python3
-      yarn
-      usbutils
-      nodejs
-      brightnessctl
-      remmina
-      spotify slack telegram-desktop
-      wayland hyprpaper hyprlock hyprpolkitagent hyprsunset waybar
-      home-manager
-      windsurf
-      ];
+    bash
+    git
+    wget
+    gcc clang-tools
+    alacritty
+    kdePackages.dolphin
+    mesa
+    jq
+    openvpn
+    fd
+    feh
+    ripgrep
+    dig
+    pywal
+    traceroute
+    gnupg
+    pinentry-gtk2
+    whois
+    file
+    tree
+    grim slurp wl-clipboard
+    unzip
+    python3
+    yarn
+    usbutils
+    nodejs
+    brightnessctl
+    remmina
+    spotify slack telegram-desktop
+    wayland hyprpaper hyprlock hyprpolkitagent hyprsunset waybar
+    home-manager
+    windsurf
+  ];
 
 }

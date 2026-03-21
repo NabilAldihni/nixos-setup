@@ -141,6 +141,13 @@
         identityFile = "~/.ssh/id_ed25519";
       };
 
+      debate = {
+        host = "debate";
+        hostname = "3.80.28.46";
+        user = "ubuntu";
+        identityFile = "~/.ssh/debate-prod-key";
+      };
+
       "*" = {
         forwardAgent = false;
         addKeysToAgent = "no";
