@@ -127,9 +127,16 @@
         identityFile = "~/.ssh/id_lab";
       };
 
+      c2 = {
+        host = "c2";
+        hostname = "192.168.20.2";
+        user = "nabil";
+        identityFile = "~/.ssh/id_lab";
+      };
+
       d21 = {
         host = "d21";
-        hostname = "limit-order-exchange-exchange101.amazingcloud.space";
+        hostname = "simple-crypto-mixer-cornadotash.amazingcloud.space";
         user = "root";
         identityFile = "~/.ssh/id_ed25519";
       };
