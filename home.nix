@@ -143,7 +143,7 @@
 
       debate = {
         host = "debate";
-        hostname = "3.80.28.46";
+        hostname = "3.91.0.64";
         user = "ubuntu";
         identityFile = "~/.ssh/debate-prod-key";
       };
