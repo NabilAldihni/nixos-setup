@@ -218,9 +218,9 @@ XC1gOVNVlwbBusLvURRFKs5S12ZvGjkGsfH4/izrl6+9ft87cUczbhY=
     pinentryPackage = pkgs.pinentry-gtk2;
   };
 
-  # Disable the mic mute button light on my keyboard
+  # Fixing the mic LED to follow the actual muting
   systemd.services.configure-sound-leds = {
-# wantedBy = [ "sys-devices-pci0000:00-0000:00:1f.3-sof_sdw-sound-card0-controlC0.device" ];
+  # wantedBy = [ "sys-devices-pci0000:00-0000:00:1f.3-sof_sdw-sound-card0-controlC0.device" ];
     wantedBy = [ "sound.target" ];
     after = [ "sound.target" ];
     serviceConfig.Type = "oneshot";
@@ -245,6 +245,18 @@ XC1gOVNVlwbBusLvURRFKs5S12ZvGjkGsfH4/izrl6+9ft87cUczbhY=
 
   environment.systemPackages = with pkgs; [
     alsa-ucm-conf
+
+    # Toggles PipeWire mute AND the hardware PGA5.0 capture switch together,
+    # so the mic mute LED (which watches PGA5.0) stays in sync with actual mute state.
+    (writeShellScriptBin "toggle-mic" ''
+      ${wireplumber}/bin/wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
+      if ${wireplumber}/bin/wpctl get-volume @DEFAULT_AUDIO_SOURCE@ | grep -q '\[MUTED\]'; then
+        ${alsa-utils}/bin/amixer -c 0 cset name='PGA5.0 5 Master Capture Switch' off
+      else
+        ${alsa-utils}/bin/amixer -c 0 cset name='PGA5.0 5 Master Capture Switch' on
+      fi
+    '')
+
     vim
     bash
     git
