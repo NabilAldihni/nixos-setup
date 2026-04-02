@@ -57,6 +57,22 @@
     };
   };
 
+  hardware.enableRedistributableFirmware = true;
+
+  hardware.ipu6 = {
+    enable = true;
+    platform = "ipu6ep"; # Alder Lake — XPS 9315
+  };
+
+  hardware.firmware = [ pkgs.ivsc-firmware ];
+
+  services.udev.extraRules = ''
+    # Hide IPU6 internal pipeline nodes — real cameras are the v4l2loopback devices
+    SUBSYSTEM=="video4linux", SUBSYSTEMS=="pci", KERNELS=="0000:00:05.0", GROUP="root", MODE="0600", TAG-="uaccess"
+    # Hide dummy v4l2loopback device
+    SUBSYSTEM=="video4linux", ATTRS{name}=="Dummy video device (0x0000)", GROUP="root", MODE="0600", TAG-="uaccess"
+  '';
+
 # Set your time zone.
   time.timeZone = "America/Toronto";
 
@@ -106,7 +122,7 @@
   users.users.nabil = {
     isNormalUser = true;
     description = "Nabil";
-    extraGroups = [ "networkmanager" "wheel" "docker" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" "video" ];
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICBa6twmSw6a8kvu41c/k56G9ytgC9VJVPDhyizzbTSD nabil@computer"
     ];
@@ -202,6 +218,7 @@ XC1gOVNVlwbBusLvURRFKs5S12ZvGjkGsfH4/izrl6+9ft87cUczbhY=
     pinentryPackage = pkgs.pinentry-gtk2;
   };
 
+  # Disable the mic mute button light on my keyboard
   systemd.services.configure-sound-leds = {
 # wantedBy = [ "sys-devices-pci0000:00-0000:00:1f.3-sof_sdw-sound-card0-controlC0.device" ];
     wantedBy = [ "sound.target" ];
@@ -213,7 +230,21 @@ XC1gOVNVlwbBusLvURRFKs5S12ZvGjkGsfH4/izrl6+9ft87cUczbhY=
       '';
   };
 
+  # Fix laptop microphone on XPS 9315 (rt714 codec via sof-soundwire).
+  # PGA5.0 capture switch starts off by default and is not set by any UCM config
+  # (upstream gap in alsa-ucm-conf for the rt715-sdca/rt714 codec).
+  systemd.services.configure-microphone = {
+    wantedBy = [ "sound.target" ];
+    after = [ "sound.target" ];
+    serviceConfig.Type = "oneshot";
+    path = [ pkgs.alsa-utils ];
+    script = ''
+      amixer -c 0 cset name='PGA5.0 5 Master Capture Switch' on
+    '';
+  };
+
   environment.systemPackages = with pkgs; [
+    alsa-ucm-conf
     vim
     bash
     git
