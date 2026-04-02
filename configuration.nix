@@ -195,6 +195,8 @@ XC1gOVNVlwbBusLvURRFKs5S12ZvGjkGsfH4/izrl6+9ft87cUczbhY=
     nerd-fonts.symbols-only
   ];
 
+  services.tlp.enable = true;
+
   services.tailscale.enable = true;
   networking.firewall.checkReversePath = "loose";
   services.blueman.enable = true;
@@ -287,7 +289,7 @@ XC1gOVNVlwbBusLvURRFKs5S12ZvGjkGsfH4/izrl6+9ft87cUczbhY=
     nodejs
     brightnessctl
     remmina
-    spotify slack telegram-desktop
+    slack telegram-desktop
     wayland hyprpaper hyprlock hyprpolkitagent waybar
     home-manager
     windsurf code-cursor
