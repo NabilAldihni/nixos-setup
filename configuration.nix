@@ -233,6 +233,7 @@ XC1gOVNVlwbBusLvURRFKs5S12ZvGjkGsfH4/izrl6+9ft87cUczbhY=
     gnupg
     pinentry-gtk2
     whois
+    claude-code
     file
     tree
     grim slurp wl-clipboard
@@ -244,9 +245,9 @@ XC1gOVNVlwbBusLvURRFKs5S12ZvGjkGsfH4/izrl6+9ft87cUczbhY=
     brightnessctl
     remmina
     spotify slack telegram-desktop
-    wayland hyprpaper hyprlock hyprpolkitagent hyprsunset waybar
+    wayland hyprpaper hyprlock hyprpolkitagent waybar
     home-manager
-    windsurf
+    windsurf code-cursor
     inputs.zen-browser.packages.${stdenv.hostPlatform.system}.default
   ];
 
