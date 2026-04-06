@@ -242,6 +242,8 @@ XC1gOVNVlwbBusLvURRFKs5S12ZvGjkGsfH4/izrl6+9ft87cUczbhY=
     path = [ pkgs.alsa-utils ];
     script = ''
       amixer -c 0 cset name='PGA5.0 5 Master Capture Switch' on
+      amixer -c 0 cset name='rt714 ADC 22 Mux' 'DMIC3'
+      amixer -c 0 cset name='rt714 ADC 23 Mux' 'DMIC4'
     '';
   };
 
