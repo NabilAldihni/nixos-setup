@@ -280,7 +280,6 @@ XC1gOVNVlwbBusLvURRFKs5S12ZvGjkGsfH4/izrl6+9ft87cUczbhY=
     gnupg
     pinentry-gtk2
     whois
-    claude-code
     file
     tree
     grim slurp wl-clipboard
@@ -291,10 +290,10 @@ XC1gOVNVlwbBusLvURRFKs5S12ZvGjkGsfH4/izrl6+9ft87cUczbhY=
     nodejs
     brightnessctl
     remmina
-    slack telegram-desktop
+    slack 
     wayland hyprpaper hyprlock hyprpolkitagent waybar
     home-manager
-    windsurf code-cursor
+    claude-code code-cursor
     inputs.zen-browser.packages.${stdenv.hostPlatform.system}.default
   ];
 
