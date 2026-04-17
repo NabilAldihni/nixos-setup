@@ -14,16 +14,17 @@ PAT=$(cat ./github-pat.txt)
 BASE_URL="https://${PAT}@github.com/${GITHUB_USER}"
 
 echo "Cloning repos..."
-nix-shell -p git --run "git clone ${BASE_URL}/${CONFIG_REPO}.git $HOME/config"
-nix-shell -p git --run "git clone ${BASE_URL}/${DOTFILES_REPO}.git $HOME/dot-files"
+[ -d "$HOME/config" ]    || nix-shell -p git --run "git clone ${BASE_URL}/${CONFIG_REPO}.git $HOME/config"
+[ -d "$HOME/dot-files" ] || nix-shell -p git --run "git clone ${BASE_URL}/${DOTFILES_REPO}.git $HOME/dot-files"
 
 echo "Copying hardware configuration from this machine..."
 cp /etc/nixos/hardware-configuration.nix "$HOME/config/hardware-configuration.nix"
 
 echo "Applying NixOS config..."
-sudo nixos-rebuild switch --flake ~/config#vm
+sudo nixos-rebuild boot --flake ~/config#vm
 
-echo "Done. Remaining manual steps:"
+echo "Done. Reboot to activate the new config."
+echo "Remaining manual steps after reboot:"
 echo "  1. Copy SSH keys from 1Password to ~/.ssh/ and chmod 600"
 echo "  2. passwd nabil"
 echo "  3. sudo tailscale up"
