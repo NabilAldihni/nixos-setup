@@ -11,7 +11,7 @@ if [ ! -f ./github-pat.txt ]; then
 fi
 
 echo "Which config do you want to apply?"
-echo "  1) Laptop (nixos)"
+echo "  1) XPS laptop (nixos)"
 echo "  2) VM (vm)"
 read -rp "Choice [1/2]: " choice
 case "$choice" in
@@ -46,3 +46,4 @@ echo "  2. passwd nabil"
 echo "  3. sudo tailscale up"
 echo "  4. Sign into 1Password"
 echo "  5. Rotate the GitHub PAT"
+echo "  6. Sign into Zen and Discord"

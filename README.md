@@ -38,6 +38,7 @@ After reboot, the whole Desktop Environment will be configured, but some more ta
  - Sign into 1Password
  - Restore SSH keys from 1Password to `~/.ssh/` and `chmod 600` the private keys.
  - Download and restore GPG key from 1Password with `gpg --import` (paste the key, then Ctrl+D)
+ - Rotate the Github PAT and update it in the USB's `github-pat.txt`
  - Sign into Tailscale (`sudo tailscale up`)
  - Sign into all other services, such as Zen browser and Discord
 
