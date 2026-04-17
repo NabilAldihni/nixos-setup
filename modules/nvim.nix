@@ -7,6 +7,8 @@
 
     withPython3 = false;
     withRuby = false;
+
+    extraPackages = with pkgs; [ gcc ];
   };
 
 

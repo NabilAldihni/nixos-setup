@@ -51,6 +51,10 @@
     mpris-proxy.enable = true;
   };
 
+  home.file.".config/swaync/style.css".source =
+    config.lib.file.mkOutOfStoreSymlink
+      "/home/nabil/dot-files/swaync/style.css";
+
   programs.ssh = {
     enable = true;
     enableDefaultConfig = false;
