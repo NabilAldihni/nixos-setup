@@ -25,7 +25,8 @@
       inherit system;
       specialArgs = { inherit inputs; };
       modules = [
-        ./configuration.nix 
+        ./configuration.nix
+        ./modules/xps.nix
 
         home-manager.nixosModules.home-manager {
           home-manager.useGlobalPkgs = true;
@@ -35,6 +36,26 @@
         }
 
         nixos-hardware.nixosModules.dell-xps-13-9315
+      ];
+    };
+
+    nixosConfigurations.vm = lib.nixosSystem {
+      inherit system;
+      specialArgs = { inherit inputs; };
+      modules = [
+        ./configuration.nix
+
+        {
+          boot.loader.systemd-boot.enable = true;
+          boot.loader.efi.canTouchEfiVariables = true;
+        }
+
+        home-manager.nixosModules.home-manager {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+
+          home-manager.users.nabil = import ./home.nix;
+        }
       ];
     };
 

@@ -17,8 +17,11 @@ echo "Cloning repos..."
 nix-shell -p git --run "git clone ${BASE_URL}/${CONFIG_REPO}.git $HOME/config"
 nix-shell -p git --run "git clone ${BASE_URL}/${DOTFILES_REPO}.git $HOME/dot-files"
 
+echo "Copying hardware configuration from this machine..."
+cp /etc/nixos/hardware-configuration.nix "$HOME/config/hardware-configuration.nix"
+
 echo "Applying NixOS config..."
-sudo nixos-rebuild switch --flake ~/config#nixos
+sudo nixos-rebuild switch --flake ~/config#vm
 
 echo "Done. Remaining manual steps:"
 echo "  1. Copy SSH keys from 1Password to ~/.ssh/ and chmod 600"
