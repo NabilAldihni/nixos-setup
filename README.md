@@ -20,7 +20,7 @@ Feel free to create it with no DE, it won't make a difference.
 
 Once installed and booted, plug in the USB and mount it:
 ```bash
-mkdir /mnt/usb && sudo mount /dev/sdX1 /mnt/usb
+mkdir -p /mnt/usb && sudo mount /dev/sdX1 /mnt/usb
 ```
 
 Finally, to get it all running do
