@@ -7,8 +7,6 @@
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  systemd.services."dbus-broker".reloadIfChanged = false;
-
 # Optimise on every build
   nix.settings.auto-optimise-store = true;
 
