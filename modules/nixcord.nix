@@ -31,7 +31,7 @@
         messageLogger = {
           enable = true;
           separatedDiffs = true;
-          # showEditDiffs = true;
+          showEditDiffs = true;
         };
         MutualGroupDMs.enable = true;
         newGuildSettings.enable = true;
@@ -39,7 +39,36 @@
         noServerEmojis.enable = true;
         OnePingPerDM.enable = true;
         pictureInPicture.enable = true;
-        PinDMs.enable = true;
+        PinDMs = {
+          enable = true;
+          canCollapseDmSection = true;
+          pinOrder = 1;
+          userBasedCategoryList = {
+            "381829872126787587" = [
+              {
+                id = "m3qiw9bvnbo";
+                name = "Favourites";
+                color = 15277667;
+                collapsed = false;
+                channels = [
+                  "1346484395598418001"
+                ];
+              }
+              {
+                id = "fc5zsstt1eh";
+                name = "Homies";
+                color = 1146986;
+                collapsed = false;
+                channels = [
+                  "1031638349322125322"
+                  "1031700186008911954"
+                  "1322791008618020915"
+                  "1328194677060665378"
+                ];
+              }
+            ];
+          };
+        };
         readAllNotificationsButton.enable = true;
         relationshipNotifier.enable = true;
         serverInfo.enable = true;
