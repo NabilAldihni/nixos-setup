@@ -29,18 +29,19 @@ Finally, to get it all running do
 ```
 
 It will ask whether you're setting up the laptop or a VM. Then it will clone the nixos-setup and dot-files repos, 
-copy the hardware configuration, and run `nixos-rebuild boot`. Reboot when done.
+copy the hardware configuration, and run `nixos-rebuild boot`. It will automatically reboot when done.
 
 ### Post-Install
 
 After reboot, the whole Desktop Environment will be configured, but some more tasks will be required:
  - If you didn't set a good password when installing Nixos, run `passwd nabil` now to reset it.
  - Sign into 1Password
+ - Sign into Zen browser (settings -> sync -> sign in)
  - Restore SSH keys from 1Password to `~/.ssh/` and `chmod 600` the private keys.
  - Download and restore GPG key from 1Password with `gpg --import` (paste the key, then Ctrl+D)
  - Rotate the Github PAT and update it in the USB's `github-pat.txt`
- - Sign into Tailscale (`sudo tailscale up`)
- - Sign into all other services, such as Zen browser and Discord
+ - Sign into Tailscale (`sudo tailscale up && sudo tailscale set --operator=nabil`)
+ - Sign into Discord
 
 ## Rebuilding on a running system
 

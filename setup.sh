@@ -39,11 +39,8 @@ fi
 echo "Applying NixOS config..."
 sudo nixos-rebuild boot --flake "$HOME/config#${FLAKE_TARGET}"
 
-echo "Done. Reboot to activate the new config."
-echo "Remaining manual steps after reboot:"
-echo "  1. Copy SSH keys from 1Password to ~/.ssh/ and chmod 600"
-echo "  2. passwd nabil"
-echo "  3. sudo tailscale up"
-echo "  4. Sign into 1Password"
-echo "  5. Rotate the GitHub PAT"
-echo "  6. Sign into Zen and Discord"
+echo -e "\n\n------------ Done. ------------"
+echo "Refer to the nixos-setup README for post-install steps."
+echo "Rebooting in 5 seconds..."
+sleep 5
+sudo reboot
