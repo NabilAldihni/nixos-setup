@@ -142,7 +142,9 @@ XC1gOVNVlwbBusLvURRFKs5S12ZvGjkGsfH4/izrl6+9ft87cUczbhY=
       user = {
         name = "Nabil Aldihni Garcia";
         email = "aldihninabil@gmail.com";
+        signingkey = "7AC24F4DCD419213";
       };
+      commit.gpgsign = true;
       init.defaultBranch = "main";
     };
   };
@@ -197,7 +199,7 @@ XC1gOVNVlwbBusLvURRFKs5S12ZvGjkGsfH4/izrl6+9ft87cUczbhY=
     bash
     git
     wget
-    gcc
+    gcc clang-tools
     alacritty
     kdePackages.dolphin
     mesa
