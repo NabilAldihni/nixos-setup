@@ -2,6 +2,8 @@
 { inputs, config, lib, pkgs, ... }:
 
 {
+  swapDevices = [{ device = "/dev/disk/by-uuid/b1923591-1244-4233-9332-37fba13c382c"; }];
+
   boot.loader = {
     grub = {
       enable = true;
