@@ -1,9 +1,11 @@
 { inputs, config, lib, pkgs, ... }:
 
 {
-  imports = [ 
+  imports = [
     ./hardware-configuration.nix
   ];
+
+  swapDevices = [{ device = "/dev/disk/by-uuid/b1923591-1244-4233-9332-37fba13c382c"; }];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
