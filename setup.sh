@@ -10,6 +10,16 @@ if [ ! -f ./github-pat.txt ]; then
   exit 1
 fi
 
+echo "Which config do you want to apply?"
+echo "  1) Laptop (nixos)"
+echo "  2) VM (vm)"
+read -rp "Choice [1/2]: " choice
+case "$choice" in
+  1) FLAKE_TARGET="nixos" ;;
+  2) FLAKE_TARGET="vm" ;;
+  *) echo "Invalid choice"; exit 1 ;;
+esac
+
 PAT=$(cat ./github-pat.txt)
 BASE_URL="https://${PAT}@github.com/${GITHUB_USER}"
 
@@ -20,8 +30,14 @@ echo "Cloning repos..."
 echo "Copying hardware configuration from this machine..."
 cp /etc/nixos/hardware-configuration.nix "$HOME/config/hardware-configuration.nix"
 
+if [ -d ./wallpapers ]; then
+  echo "Copying wallpapers..."
+  cp -r ./wallpapers "$HOME/wallpapers"
+  nix-shell -p pywal --run "wal -i $HOME/wallpapers/test.png -n"
+fi
+
 echo "Applying NixOS config..."
-sudo nixos-rebuild boot --flake ~/config#vm
+sudo nixos-rebuild boot --flake "$HOME/config#${FLAKE_TARGET}"
 
 echo "Done. Reboot to activate the new config."
 echo "Remaining manual steps after reboot:"
