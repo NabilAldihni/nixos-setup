@@ -12,6 +12,7 @@
       url = "github:youwen5/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nixcord.url = "github:FlameFlag/nixcord";
   };
 
   outputs = { nixpkgs, home-manager, nixos-hardware, ... } @ inputs: 
@@ -31,6 +32,7 @@
         home-manager.nixosModules.home-manager {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
+          home-manager.extraSpecialArgs = { inherit inputs; };
 
           home-manager.users.nabil = import ./home.nix;
         }
@@ -53,6 +55,7 @@
         home-manager.nixosModules.home-manager {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
+          home-manager.extraSpecialArgs = { inherit inputs; };
 
           home-manager.users.nabil = import ./home.nix;
         }
@@ -61,6 +64,7 @@
 
     homeConfigurations.nabil = home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
+      extraSpecialArgs = { inherit inputs; };
       modules = [ ./home.nix ];
     };
   };

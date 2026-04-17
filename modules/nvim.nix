@@ -4,6 +4,9 @@
     enable = true;
     defaultEditor = true;
     vimAlias = true;
+
+    withPython3 = false;
+    withRuby = false;
   };
 
 

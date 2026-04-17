@@ -1,16 +1,18 @@
-{ config, pkgs, ... }:
+{ inputs, config, pkgs, ... }:
 
 {
   imports = [
     ./modules/sh.nix
-      ./modules/dis.nix
-      ./modules/hypr/hyprland.nix
-      ./modules/hypr/hypridle.nix
-      ./modules/hypr/hyprpaper.nix
-      ./modules/hypr/waybar.nix
-      ./modules/hypr/rofi.nix
-      ./modules/tmux.nix
-      ./modules/nvim.nix
+    ./modules/dis.nix
+    ./modules/nixcord.nix
+    ./modules/hypr/hyprland.nix
+    ./modules/hypr/hypridle.nix
+    ./modules/hypr/hyprpaper.nix
+    ./modules/hypr/waybar.nix
+    ./modules/hypr/rofi.nix
+    ./modules/tmux.nix
+    ./modules/nvim.nix
+    inputs.nixcord.homeModules.nixcord
   ];
   home.stateVersion = "25.05"; # Do not change this value
     programs.home-manager.enable = true;
@@ -19,8 +21,7 @@
   home.homeDirectory = "/home/nabil";
 
   home.packages = with pkgs; [
-    vesktop
-      hyprpicker
+    hyprpicker
   ];
 
   home.sessionVariables = {

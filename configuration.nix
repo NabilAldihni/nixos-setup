@@ -192,11 +192,12 @@ XC1gOVNVlwbBusLvURRFKs5S12ZvGjkGsfH4/izrl6+9ft87cUczbhY=
   };
 
   environment.systemPackages = with pkgs; [
+    home-manager
     vim
     bash
     git
     wget
-    gcc clang-tools
+    gcc
     alacritty
     kdePackages.dolphin
     mesa
@@ -220,9 +221,7 @@ XC1gOVNVlwbBusLvURRFKs5S12ZvGjkGsfH4/izrl6+9ft87cUczbhY=
     usbutils
     nodejs
     brightnessctl
-    remmina
     wayland hyprpaper hyprlock hyprpolkitagent waybar
-    home-manager
     claude-code code-cursor
     inputs.zen-browser.packages.${stdenv.hostPlatform.system}.default
   ];
