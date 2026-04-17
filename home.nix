@@ -33,6 +33,10 @@
   ];
 
   home.file = {
+    ".gnupg/gpg-agent.conf".text = ''
+      default-cache-ttl 28800
+      max-cache-ttl 86400
+    '';
   };
 
   programs.direnv = {

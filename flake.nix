@@ -19,7 +19,7 @@
   let
     system = "x86_64-linux";
     lib = nixpkgs.lib;
-    pkgs = nixpkgs.legacyPackages.${system};
+    pkgs = import nixpkgs { inherit system; config.allowUnfree = true; };
   in
   {
     nixosConfigurations.nixos = lib.nixosSystem {
