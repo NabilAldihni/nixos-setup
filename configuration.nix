@@ -34,20 +34,6 @@
   };
 
 
-  # hardware.ipu6 = {
-  #   enable = true;
-  #   platform = "ipu6ep"; # Alder Lake — XPS 9315
-  # };
-
-  # hardware.firmware = [ pkgs.ivsc-firmware ];
-
-  # services.udev.extraRules = ''
-  #   # Hide IPU6 internal pipeline nodes — real cameras are the v4l2loopback devices
-  #   SUBSYSTEM=="video4linux", SUBSYSTEMS=="pci", KERNELS=="0000:00:05.0", GROUP="root", MODE="0600", TAG-="uaccess"
-  #   # Hide dummy v4l2loopback device
-  #   SUBSYSTEM=="video4linux", ATTRS{name}=="Dummy video device (0x0000)", GROUP="root", MODE="0600", TAG-="uaccess"
-  # '';
-
 # Set your time zone.
   time.timeZone = "America/Toronto";
 

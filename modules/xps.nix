@@ -15,6 +15,24 @@
 
   hardware.enableRedistributableFirmware = true;
 
+  hardware.ipu6 = {
+    enable = true;
+    platform = "ipu6ep"; # Alder Lake — XPS 9315
+  };
+
+  # The Intel camera HAL writes runtime adaptation data (.aiqd files) to /run/camera
+  systemd.tmpfiles.rules = [ "d /run/camera 0755 root root -" ];
+
+  hardware.firmware = [ pkgs.ivsc-firmware ];
+
+  services.udev.extraRules = ''
+    # Hide IPU6 internal pipeline nodes — real cameras are the v4l2loopback devices
+    SUBSYSTEM=="video4linux", SUBSYSTEMS=="pci", KERNELS=="0000:00:05.0", GROUP="root", MODE="0600", TAG-="uaccess"
+    # Hide dummy v4l2loopback device
+    SUBSYSTEM=="video4linux", ATTRS{name}=="Dummy video device (0x0000)", GROUP="root", MODE="0600", TAG-="uaccess"
+  '';
+
+
   hardware.bluetooth = {
     enable = true;
     settings.General = {
