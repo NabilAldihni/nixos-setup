@@ -49,6 +49,7 @@
   services = {
     swaync.enable = true;
     mpris-proxy.enable = true;
+    hyprpolkitagent.enable = true;
   };
 
   home.file.".config/swaync/style.css".source =
