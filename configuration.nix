@@ -23,6 +23,9 @@
 # Enable networking
   networking.networkmanager.enable = true;
 
+  # Don't block boot waiting for connectivity before SDDM
+  systemd.services.NetworkManager-wait-online.enable = false;
+
   networking.nameservers = [ "1.1.1.1#one.one.one.one" "1.0.0.1#one.one.one.one" ];
 
   services.resolved.settings.Resolve = {
@@ -52,7 +55,6 @@
     withUWSM = true;
   };
 
-  services.seatd.enable = true;
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 
@@ -77,6 +79,7 @@
 
   virtualisation.docker = {
     enable = true;
+    enableOnBoot = false;
   };
 
 # Define a user account. Don't forget to set a password with ‘passwd’.

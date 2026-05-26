@@ -7,8 +7,9 @@
       enable = true;
       efiSupport = true;
       device = "nodev";
-      useOSProber = true;
+      useOSProber = false;
       configurationLimit = 5;
+      timeout = 1;
     };
     efi.efiSysMountPoint = "/boot";
   };
