@@ -45,29 +45,18 @@
   services.fprintd.enable = true;
   services.tlp.enable = true;
 
-  # Fixing the mic LED to follow the actual muting
-  systemd.services.configure-sound-leds = {
-    wantedBy = [ "sound.target" ];
-    after = [ "sound.target" ];
-    serviceConfig.Type = "oneshot";
-    script = ''
-      echo follow-route > /sys/class/sound/ctl-led/mic/mode
-      echo off > /sys/class/sound/ctl-led/speaker/mode # follow-route pending https://discourse.nixos.org/t/20480
-    '';
-  };
-
-  # Fix laptop microphone on XPS 9315 (rt714 codec via sof-soundwire).
-  # PGA5.0 capture switch starts off by default and is not set by any UCM config
-  # (upstream gap in alsa-ucm-conf for the rt715-sdca/rt714 codec).
-  systemd.services.configure-microphone = {
+  # XPS 9315 audio: mic LED follows PGA mute; DMIC routing; boot muted (PGA off).
+  systemd.services.configure-xps-audio = {
     wantedBy = [ "sound.target" ];
     after = [ "sound.target" ];
     serviceConfig.Type = "oneshot";
     path = [ pkgs.alsa-utils ];
     script = ''
-      amixer -c 0 cset name='PGA5.0 5 Master Capture Switch' on
+      echo follow-route > /sys/class/sound/ctl-led/mic/mode
+      echo off > /sys/class/sound/ctl-led/speaker/mode
       amixer -c 0 cset name='rt714 ADC 22 Mux' 'DMIC3'
       amixer -c 0 cset name='rt714 ADC 23 Mux' 'DMIC4'
+      amixer -c 0 cset name='PGA5.0 5 Master Capture Switch' off
     '';
   };
 
