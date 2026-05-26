@@ -59,116 +59,102 @@
   programs.ssh = {
     enable = true;
     enableDefaultConfig = false;
-    matchBlocks = {
+    settings = {
       pwn-college = {
-        host = "pwn-college";
-        hostname = "dojo.pwn.college";
-        user = "hacker";
-        identityFile = "~/.ssh/id_ed25519";
+        HostName = "dojo.pwn.college";
+        User = "hacker";
+        IdentityFile = "~/.ssh/id_ed25519";
       };
 
       debian-nginx = {
-        host = "debian-nginx";
-        hostname = "192.168.30.51";
-        user = "root";
-        identityFile = "~/.ssh/id_lab";
+        HostName = "192.168.30.51";
+        User = "root";
+        IdentityFile = "~/.ssh/id_lab";
       };
 
       ubuntu-docker = {
-        host = "ubuntu-docker";
-        hostname = "192.168.10.51";
-        user = "nabil";
-        identityFile = "~/.ssh/id_lab";
+        HostName = "192.168.10.51";
+        User = "nabil";
+        IdentityFile = "~/.ssh/id_lab";
       };
 
       debian-vault = {
-        host = "debian-vault";
-        hostname = "192.168.40.51";
-        user = "nabil";
-        identityFile = "~/.ssh/id_lab";
+        HostName = "192.168.40.51";
+        User = "nabil";
+        IdentityFile = "~/.ssh/id_lab";
       };
 
       debian-mc = {
-        host = "debian-mc";
-        hostname = "192.168.10.52";
-        user = "nabil";
-        identityFile = "~/.ssh/id_lab";
+        HostName = "192.168.10.52";
+        User = "nabil";
+        IdentityFile = "~/.ssh/id_lab";
       };
 
       k8s-ctrlr = {
-        host = "k8s-ctrlr";
-        hostname = "192.168.40.56";
-        user = "nabil";
-        identityFile = "~/.ssh/id_lab";
+        HostName = "192.168.40.56";
+        User = "nabil";
+        IdentityFile = "~/.ssh/id_lab";
       };
 
       k8s-worker1 = {
-        host = "k8s-worker1";
-        hostname = "192.168.40.57";
-        user = "nabil";
-        identityFile = "~/.ssh/id_lab";
+        HostName = "192.168.40.57";
+        User = "nabil";
+        IdentityFile = "~/.ssh/id_lab";
       };
 
       k8s-worker2 = {
-        host = "k8s-worker2";
-        hostname = "192.168.40.58";
-        user = "nabil";
-        identityFile = "~/.ssh/id_lab";
+        HostName = "192.168.40.58";
+        User = "nabil";
+        IdentityFile = "~/.ssh/id_lab";
       };
 
       t2l-dev1 = {
-        host = "t2l-dev1";
-        hostname = "192.168.50.51";
-        user = "nabil";
-        identityFile = "~/.ssh/id_lab";
+        HostName = "192.168.50.51";
+        User = "nabil";
+        IdentityFile = "~/.ssh/id_lab";
       };
 
       proxmox = {
-        host = "proxmox";
-        hostname = "100.118.68.78";
-        user = "root";
-        identityFile = "~/.ssh/id_lab";
+        HostName = "100.118.68.78";
+        User = "root";
+        IdentityFile = "~/.ssh/id_lab";
       };
 
       kali = {
-        host = "kali";
-        hostname = "192.168.40.56";
-        user = "kali";
-        identityFile = "~/.ssh/id_lab";
+        HostName = "192.168.40.56";
+        User = "kali";
+        IdentityFile = "~/.ssh/id_lab";
       };
 
       c2 = {
-        host = "c2";
-        hostname = "192.168.20.2";
-        user = "nabil";
-        identityFile = "~/.ssh/id_lab";
+        HostName = "192.168.20.2";
+        User = "nabil";
+        IdentityFile = "~/.ssh/id_lab";
       };
 
       d21 = {
-        host = "d21";
-        hostname = "simple-crypto-mixer-cornadotash.amazingcloud.space";
-        user = "root";
-        identityFile = "~/.ssh/id_ed25519";
+        HostName = "simple-crypto-mixer-cornadotash.amazingcloud.space";
+        User = "root";
+        IdentityFile = "~/.ssh/id_ed25519";
       };
 
       debate = {
-        host = "debate";
-        hostname = "3.91.0.64";
-        user = "ubuntu";
-        identityFile = "~/.ssh/debate-prod-key";
+        HostName = "3.91.0.64";
+        User = "ubuntu";
+        IdentityFile = "~/.ssh/debate-prod-key";
       };
 
       "*" = {
-        forwardAgent = false;
-        addKeysToAgent = "no";
-        compression = false;
-        serverAliveInterval = 0;
-        serverAliveCountMax = 3;
-        hashKnownHosts = false;
-        userKnownHostsFile = "~/.ssh/known_hosts";
-        controlMaster = "no";
-        controlPath = "~/.ssh/master-%r@%n:%p";
-        controlPersist = "no";
+        ForwardAgent = false;
+        AddKeysToAgent = "no";
+        Compression = false;
+        ServerAliveInterval = 0;
+        ServerAliveCountMax = 3;
+        HashKnownHosts = false;
+        UserKnownHostsFile = "~/.ssh/known_hosts";
+        ControlMaster = "no";
+        ControlPath = "~/.ssh/master-%r@%n:%p";
+        ControlPersist = "no";
       };
     };
   };

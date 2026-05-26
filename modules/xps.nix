@@ -3,13 +3,13 @@
 
 {
   boot.loader = {
+    timeout = 1;
     grub = {
       enable = true;
       efiSupport = true;
       device = "nodev";
       useOSProber = false;
       configurationLimit = 5;
-      timeout = 1;
     };
     efi.efiSysMountPoint = "/boot";
   };
