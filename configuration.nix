@@ -209,6 +209,8 @@ XC1gOVNVlwbBusLvURRFKs5S12ZvGjkGsfH4/izrl6+9ft87cUczbhY=
     usbutils
     nodejs
     brightnessctl
+    pavucontrol
+    pamixer
     wayland hyprpaper hyprlock hyprpolkitagent waybar
     claude-code code-cursor
     inputs.zen-browser.packages.${stdenv.hostPlatform.system}.default
