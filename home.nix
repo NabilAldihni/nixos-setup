@@ -132,18 +132,6 @@
         IdentityFile = "~/.ssh/id_lab";
       };
 
-      d21 = {
-        HostName = "simple-crypto-mixer-cornadotash.amazingcloud.space";
-        User = "root";
-        IdentityFile = "~/.ssh/id_ed25519";
-      };
-
-      debate = {
-        HostName = "3.91.0.64";
-        User = "ubuntu";
-        IdentityFile = "~/.ssh/debate-prod-key";
-      };
-
       "*" = {
         ForwardAgent = false;
         AddKeysToAgent = "no";
