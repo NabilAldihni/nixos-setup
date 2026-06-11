@@ -194,6 +194,7 @@ XC1gOVNVlwbBusLvURRFKs5S12ZvGjkGsfH4/izrl6+9ft87cUczbhY=
     mesa
     jq
     openvpn
+    openssl
     fd
     feh
     ripgrep
