@@ -55,6 +55,10 @@
   home.file.".config/swaync/style.css".source =
     config.lib.file.mkOutOfStoreSymlink
       "/home/nabil/dot-files/swaync/style.css";
+      
+  home.file.".config/alacritty/alacritty.toml".source =
+    config.lib.file.mkOutOfStoreSymlink
+      "/home/nabil/dot-files/alacritty/.config/alacritty/alacritty.toml";
 
   programs.ssh = {
     enable = true;
@@ -123,6 +127,12 @@
       kali = {
         HostName = "192.168.40.56";
         User = "kali";
+        IdentityFile = "~/.ssh/id_lab";
+      };
+
+      dns-01 = {
+        HostName = "192.168.30.53";
+        User = "nabil";
         IdentityFile = "~/.ssh/id_lab";
       };
 
