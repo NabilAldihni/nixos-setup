@@ -136,6 +136,12 @@
         IdentityFile = "~/.ssh/id_lab";
       };
 
+      exit-node = {
+        HostName = "192.168.30.54";
+        User = "root";
+        IdentityFile = "~/.ssh/id_lab";
+      };
+
       c2 = {
         HostName = "192.168.20.2";
         User = "nabil";
