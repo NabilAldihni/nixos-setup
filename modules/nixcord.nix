@@ -33,13 +33,13 @@
           separatedDiffs = true;
           showEditDiffs = true;
         };
-        mutualGroupDMs.enable = true;
+        mutualGroupDms.enable = true;
         newGuildSettings.enable = true;
         noF1.enable = true;
         noServerEmojis.enable = true;
-        onePingPerDM.enable = true;
+        onePingPerDm.enable = true;
         pictureInPicture.enable = true;
-        pinDMs = {
+        pinDms = {
           enable = true;
           canCollapseDmSection = true;
           pinOrder = 1;
