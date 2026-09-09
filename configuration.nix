@@ -216,7 +216,10 @@ XC1gOVNVlwbBusLvURRFKs5S12ZvGjkGsfH4/izrl6+9ft87cUczbhY=
     pavucontrol
     pamixer
     wayland hyprpaper hyprlock waybar
-    claude-code code-cursor
+    devbox
+    claude-code code-cursor codex opencode
+    slack
+    blender
     inputs.zen-browser.packages.${stdenv.hostPlatform.system}.default
   ];
 

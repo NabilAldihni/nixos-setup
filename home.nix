@@ -142,6 +142,12 @@
         IdentityFile = "~/.ssh/id_lab";
       };
 
+      workbox = {
+        HostName = "192.168.10.54";
+        User = "nabil";
+        IdentityFile = "~/.ssh/id_lab";
+      };
+
       c2 = {
         HostName = "192.168.20.2";
         User = "nabil";
