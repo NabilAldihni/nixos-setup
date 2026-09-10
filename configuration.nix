@@ -182,7 +182,7 @@ XC1gOVNVlwbBusLvURRFKs5S12ZvGjkGsfH4/izrl6+9ft87cUczbhY=
   services.pcscd.enable = true;
   programs.gnupg.agent = {
     enable = true;
-    pinentryPackage = pkgs.pinentry-gtk2;
+    pinentryPackage = pkgs.pinentry-gnome3;
   };
 
   environment.systemPackages = with pkgs; [
@@ -203,9 +203,10 @@ XC1gOVNVlwbBusLvURRFKs5S12ZvGjkGsfH4/izrl6+9ft87cUczbhY=
     ripgrep
     dig
     pywal
+    wireshark
     traceroute
     gnupg
-    pinentry-gtk2
+    pinentry-gnome3
     whois
     file
     tree

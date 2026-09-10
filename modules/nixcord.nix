@@ -2,7 +2,8 @@
 {
   programs.nixcord = {
     enable = true;
-    vesktop.enable = true;
+    vesktop.enable = true; # Separate client with all the features
+    discord.enable = false; # So that discord is not also installed
 
     config = {
       autoUpdate = true;
@@ -17,7 +18,6 @@
         copyFileContents.enable = true;
         crashHandler.enable = true;
         fixCodeblockGap.enable = true;
-        friendsSince.enable = true;
         fullSearchContext.enable = true;
         gameActivityToggle.enable = true;
         imageFilename.enable = true;
