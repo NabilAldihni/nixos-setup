@@ -162,7 +162,10 @@ XC1gOVNVlwbBusLvURRFKs5S12ZvGjkGsfH4/izrl6+9ft87cUczbhY=
   ];
 
   services.tailscale.enable = true;
-  networking.firewall.checkReversePath = "loose";
+  networking.firewall = {
+    trustedInterfaces = [ "tailscale0" ];
+    checkReversePath = "loose";
+  };
 
   programs._1password.enable = true;
   programs._1password-gui = {
