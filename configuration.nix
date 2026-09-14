@@ -160,6 +160,25 @@ XC1gOVNVlwbBusLvURRFKs5S12ZvGjkGsfH4/izrl6+9ft87cUczbhY=
     settings.PermitRootLogin = "no";
   };
 
+  programs.fuse.userAllowOther = true;
+  fileSystems."/home/nabil/uni/D60/cluster" = {
+    device = "lcl_uotcscd60s2167@teach.scinet.utoronto.ca:/home/l/lcl_uotcscd60/lcl_uotcscd60s2167";
+    fsType = "sshfs";
+    options = [
+      "nodev"
+      "noatime"
+      "allow_other"
+      "_netdev" # this is a network fs
+      "x-systemd.automount" # mount on demand
+      "reconnect"
+      "idmap=user"
+      "noauto"
+      # Explicitly pass identity key and host checking options to sshfs
+      "IdentityFile=/home/nabil/.ssh/id_ed25519" # Replace with your actual key file
+      "UserKnownHostsFile=/home/nabil/.ssh/known_hosts"
+      "StrictHostKeyChecking=no" # Set to accept-new if preferred
+    ];
+  };
 
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
@@ -232,6 +251,7 @@ XC1gOVNVlwbBusLvURRFKs5S12ZvGjkGsfH4/izrl6+9ft87cUczbhY=
     blender
     inputs.zen-browser.packages.${stdenv.hostPlatform.system}.default
 
+    sshfs
     wireshark
     networkmanager-openconnect
   ];
