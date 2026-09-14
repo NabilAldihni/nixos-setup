@@ -21,7 +21,12 @@
   networking.hostName = "nixos";
 
 # Enable networking
-  networking.networkmanager.enable = true;
+  networking.networkmanager = {
+    enable = true;
+    plugins = with pkgs; [
+      networkmanager-openconnect
+    ];
+  };
 
   # Don't block boot waiting for connectivity before SDDM
   systemd.services.NetworkManager-wait-online.enable = false;
@@ -86,7 +91,7 @@
   users.users.nabil = {
     isNormalUser = true;
     description = "Nabil";
-    extraGroups = [ "networkmanager" "wheel" "docker" "video" "dialout" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" "video" "dialout" "wireshark" ];
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICBa6twmSw6a8kvu41c/k56G9ytgC9VJVPDhyizzbTSD nabil@computer"
     ];
@@ -185,6 +190,8 @@ XC1gOVNVlwbBusLvURRFKs5S12ZvGjkGsfH4/izrl6+9ft87cUczbhY=
     pinentryPackage = pkgs.pinentry-gnome3;
   };
 
+  programs.wireshark.enable = true;
+
   environment.systemPackages = with pkgs; [
     home-manager
     vim
@@ -203,7 +210,6 @@ XC1gOVNVlwbBusLvURRFKs5S12ZvGjkGsfH4/izrl6+9ft87cUczbhY=
     ripgrep
     dig
     pywal
-    wireshark
     traceroute
     gnupg
     pinentry-gnome3
@@ -225,6 +231,9 @@ XC1gOVNVlwbBusLvURRFKs5S12ZvGjkGsfH4/izrl6+9ft87cUczbhY=
     slack
     blender
     inputs.zen-browser.packages.${stdenv.hostPlatform.system}.default
+
+    wireshark
+    networkmanager-openconnect
   ];
 
 }

@@ -143,7 +143,7 @@
       };
 
       workbox = {
-        HostName = "192.168.10.54";
+        HostName = "192.168.10.53";
         User = "nabil";
         IdentityFile = "~/.ssh/id_lab";
       };
@@ -152,6 +152,12 @@
         HostName = "192.168.20.2";
         User = "nabil";
         IdentityFile = "~/.ssh/id_lab";
+      };
+
+      scinet = {
+        HostName = "teach.scinet.utoronto.ca";
+        User = "lcl_uotcscd60s2167";
+        IdentityFile = "~/.ssh/id_ed25519";
       };
 
       "*" = {
