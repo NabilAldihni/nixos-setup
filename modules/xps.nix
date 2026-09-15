@@ -31,27 +31,7 @@
     SUBSYSTEM=="video4linux", SUBSYSTEMS=="pci", KERNELS=="0000:00:05.0", GROUP="root", MODE="0600", TAG-="uaccess"
     # Hide dummy v4l2loopback device
     SUBSYSTEM=="video4linux", ATTRS{name}=="Dummy video device (0x0000)", GROUP="root", MODE="0600", TAG-="uaccess"
-    # Goodix fingerprint: keep USB powered — autosuspend races with hyprlock on resume
-    SUBSYSTEM=="usb", ATTR{idVendor}=="27c6", ATTR{idProduct}=="63ac", ATTR{power/control}="on"
   '';
-
-  # Stop fprintd before suspend so hyprlock gets a clean daemon via socket activation on wake.
-  systemd.packages = [
-    (pkgs.writeTextFile {
-      name = "fprintd-system-sleep";
-      destination = "/lib/systemd/system-sleep/fprintd";
-      executable = true;
-      text = ''
-        #!${pkgs.bash}/bin/bash
-        case "$1" in
-          pre)
-            systemctl stop fprintd.service 2>/dev/null || true
-            ;;
-        esac
-      '';
-    })
-  ];
-
 
   hardware.bluetooth = {
     enable = true;
@@ -61,7 +41,6 @@
   };
   services.blueman.enable = true;
 
-  services.fprintd.enable = true;
   services.tlp.enable = true;
 
   # XPS 9315 audio: mic LED follows PGA mute; DMIC routing; boot muted (PGA off).
